@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 1.2rem;
+    min-height: 100%;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.contenedor>* {
+    box-shadow: rgba(0, 0, 0, 00.75) 0px 5px 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* . - - - - > class    # - - - - > id */
+
+.header {
+    grid-area: header;
+    background: #6c584c;
+}
+
+.navbar {
+    grid-area: navbar;
+    background: #d4a373;
+}
+
+#main {
+    grid-area: main;
+    background: #faedcd;
+}
+
+#sidebar {
+    grid-area: sidebar;
+    background: #84a98c;
+}
+
+#footer {
+    grid-area: footer;
+    background: #606c38;
+}
+
+/* ---------- grid template column ---------- */
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "header" 100px
+        "navbar" 50px
+        "main" auto
+        "sidebar" 100px
+        "footer" 100px;
+}
+
+/* ----- @media ----*/
+
+@media (min-width: 600px) {
+    .contenedor {
+        grid-template:
+            "header header" 100px
+            "navbar navbar" 50px
+            "sidebar main" auto
+            "footer footer" 100px / 200px auto;
+    }
+}
+
+/* ----- @media 900 -----*/
+
+@media (min-width: 900px) {
+    .contenedor {
+        grid-template:
+            "header header header" 100px
+            "navbar main sidebar" auto
+            "footer footer footer" 100px/ 200px auto 200px
+    }
+}
+
+/* ------- estilo propio ---------*/
+
+.header h1 {
+    color: #352821;
+    padding-top: 15px;
+}
+
+#main h1 {
+    color: #bc6c25;
+}
+
+#main img {
+    padding-top: 15px;
+    filter: brightness(50%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+#main img:hover {
+    filter: brightness(100%);
+}
+
+#sidebar h4{
+    color: #2f3e46;
+    text-decoration:underline;
+}
+
+.navbar h4{
+    color: #6d3c11;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:#30241c;
+}
+
+.navbar img{
+    width: 95%;
+}
